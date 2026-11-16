@@ -122,3 +122,6 @@ desktop.ini
 .Trashes
 .fuse_hidden*
 .directory
+
+# imp docs
+*.chat.md
