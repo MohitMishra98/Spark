@@ -36,17 +36,17 @@ Complete technical specifications and system designs are available in the [`docs
 
 ```mermaid
 flowchart LR
-    Browser["React 19 SPA\n(Chat + Task Plan + Monaco)"]
-    API["FastAPI Gateway\n(Async / Non-Blocking)"]
-    Temporal["Temporal Cluster\n(Durable Workflows)"]
-    Worker["Agent Worker\n(Pydantic AI + Tools)"]
-    Redis[("Redis Streams\n(Event Buffer)")]
-    Postgres[("PostgreSQL\n(Metadata & History)")]
-    Sandbox["Isolated Sandbox\n(E2B / Firecracker)"]
-    Storage[("Persistent Storage\n(/workspace volume)")]
+    Browser["React 19 SPA<br/>(Chat + Task Plan + Monaco)"]
+    API["FastAPI Gateway<br/>(Async / Non-Blocking)"]
+    Temporal["Temporal Cluster<br/>(Durable Workflows)"]
+    Worker["Agent Worker<br/>(Pydantic AI + Tools)"]
+    Redis[("Redis Streams<br/>(Event Buffer)")]
+    Postgres[("PostgreSQL<br/>(Metadata & History)")]
+    Sandbox["Isolated Sandbox<br/>(E2B / Firecracker)"]
+    Storage[("Persistent Storage<br/>(/workspace volume)")]
 
     Browser -->|1. Submit Prompt| API
-    Browser -->|3. SSE Stream (Last-Event-ID)| API
+    Browser -->|3. SSE Stream via Last-Event-ID| API
     API -->|2. Start Workflow| Temporal
     Temporal <-->|Dispatch Activities| Worker
     Worker -->|Agent Logic| Sandbox

@@ -121,7 +121,7 @@ flowchart TD
     %% Client Interactions
     UI -->|1. POST /api/runs| API
     UI -->|3. Connect SSE| SSE_Endpoint
-    SSE_Client <---|Events Stream| SSE_Endpoint
+    SSE_Endpoint -->|Events Stream| SSE_Client
 
     %% Gateway to Coordination
     API -->|Write metadata| PG

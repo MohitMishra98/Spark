@@ -141,7 +141,7 @@ flowchart TB
     Harness <-->|Prompts / Streaming Completions| LLMProvider
     
     %% Worker to Coordination & Sandboxes
-    Activities -->|Publish Typed Events (XADD)| RedisCore
+    Activities -->|Publish Typed Events: XADD| RedisCore
     Activities -->|Update Run Status / Results| Postgres
     Activities -->|RPC: Execute Command / Filesystem| SandboxController
 
